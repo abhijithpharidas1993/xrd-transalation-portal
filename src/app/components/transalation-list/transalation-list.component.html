@@ -1,0 +1,53 @@
+
+
+            <div class="button-group">
+                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Columns<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                    <li *ngFor ="let language of languages; let i= index"><a href="#" class="small" data-value="option1" tabIndex="-1"><input
+                                type="checkbox" [checked]="language.checked"  (change)="columnSelected(language.code, i)"/>&nbsp;{{language.text}}</a></li>
+                    
+                </ul>
+            </div>
+        
+
+<div class="table-responsive">
+
+<table class="table table-striped">
+  <thead>
+  <tr class="d-flex">
+    <th class="col-2">
+        Key
+    </th>
+    <th class="col-{{size}}" *ngFor ="let language of columns">
+        {{language.text}}
+    </th>
+    
+  </tr>
+  </thead>
+  <tbody>
+  <tr class="d-flex" *ngFor="let transalation of transalations">
+    <th scope="row" class="col-2">{{ transalation.key }}</th>
+    <td class="col-{{size}}" *ngFor ="let language of columns">
+        {{transalation.translations[0][language.code]}}
+    </td>
+    <!-- <td>
+      <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag" class="mr-2" style="width: 20px">
+      {{ country.name }}
+    </td>
+    <td>{{ country.area | number}}</td>
+    <td>{{ country.population | number }}</td> -->
+  </tr>
+  </tbody>
+</table>
+</div>
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize" (pageChange)="refreshCountries()">
+  </ngb-pagination>
+
+  <!-- <select class="custom-select" style="width: auto" [(ngModel)]="pageSize" (ngModelChange)="refreshCountries()">
+    <option [ngValue]="2">2 items per page</option>
+    <option [ngValue]="4">4 items per page</option>
+    <option [ngValue]="6">6 items per page</option>
+  </select> -->
+</div>
+

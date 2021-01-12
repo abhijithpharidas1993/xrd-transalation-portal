@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+tr {
+    border: none;
+}
+
+
+
+.page-link {
+    background-color: #000000;
+    border: 1px solid #333;
+    //00adef
+}
+.page-item.disabled .page-link {
+    background-color: #000000;
+    border: 1px solid #333;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

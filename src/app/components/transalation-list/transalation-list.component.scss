@@ -1,0 +1,23 @@
+.table{
+    color: #FFFFFF;
+    th {
+        border-bottom: none;
+        border-top: 1px solid #333;
+        word-break: break-all;
+    }
+    td {
+        border-top: 1px solid #333;
+
+    }
+}
+.btn{
+    color: #00adef;
+    margin-bottom: 10px;
+}
+
+.dropdown-menu li{
+    padding: 5px;
+    a{
+        color: #00adef;
+    }
+}
